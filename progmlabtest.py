@@ -7,14 +7,6 @@ def from10to3(num):
         num = num // 3
     return res
 
-def brute():
-    i = 0
-    nums = []
-    while i < 3**9:
-        nums.append((9-len(str(from10to3(i))))*'0'+str(from10to3(i)))
-        i+=1
-    return nums
-
 def check(nums):
     res = 0
     prev = '+9'
@@ -45,6 +37,8 @@ def answer(nums):
                 res = res + '+' + str(8-i)
     return res
 
-for i in brute():
-    if check(i):
-        print(answer(i))
+for i in range(3**9) :
+    nums = (9-len(str(from10to3(i))))*'0'+str(from10to3(i))
+    if check(nums):
+        print(answer(nums))
+        break
