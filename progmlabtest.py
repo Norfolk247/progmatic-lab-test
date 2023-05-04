@@ -41,4 +41,3 @@ for i in range(3**9) :
     nums = (9-len(str(from10to3(i))))*'0'+str(from10to3(i))
     if check(nums):
         print(answer(nums))
-        break
